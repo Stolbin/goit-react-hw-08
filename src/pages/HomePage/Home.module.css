@@ -1,0 +1,21 @@
+.text {
+  /* display: flex; */
+  align-items: center;
+  text-align: center;
+  color: #70bfcc;
+  font-size: 22px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+}
+
+@media screen and (min-width: 768px) {
+  .text {
+    font-size: 44px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .text {
+    font-size: 60px;
+  }
+}
