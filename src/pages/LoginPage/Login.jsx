@@ -1,11 +1,15 @@
-import DocumentTitle from "../components/DocumentTitle";
-import { LoginForm } from "../../components/LoginForm/LoginForm";
+import { Helmet } from "react-helmet-async";
+import LoginForm from "../../components/LoginForm/LoginForm";
 
-export default function Login() {
+const LoginPage = () => {
   return (
     <div>
-      <DocumentTitle>Login</DocumentTitle>
+      <Helmet>
+        <title>Login Page</title>
+      </Helmet>
       <LoginForm />
     </div>
   );
-}
+};
+
+export default LoginPage;

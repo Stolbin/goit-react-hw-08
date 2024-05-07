@@ -1,4 +1,4 @@
-import { AppBar } from "../AppBar/AppBar";
+import AppBar from "../AppBar/AppBar";
 import { Suspense } from "react";
 import Loader from "../Loader/Loader";
 

@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../redux/auth/operations";
 import css from "./LoginForm.module.css";
 
-export const LoginForm = () => {
+const LoginForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -40,3 +40,5 @@ export const LoginForm = () => {
     </form>
   );
 };
+
+export default LoginForm;

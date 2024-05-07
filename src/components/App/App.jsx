@@ -9,9 +9,7 @@ import NotFoundPage from "../../pages/NotFoundPage/NotFound";
 import ContactForm from "../ContactForm/ContactForm";
 
 const HomePage = lazy(() => import("../../pages/HomePage/Home"));
-const ContactsPage = lazy(() =>
-  import("../../pages/ContactsPage/ContactsPage")
-);
+const ContactsPage = lazy(() => import("../../pages/ContactsPage/Contacts"));
 const LoginPage = lazy(() => import("../../pages/LoginPage/Login"));
 const RegistrationPage = lazy(() =>
   import("../../pages/RegistrationPage/Registration")

@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import ContactList from "../../components/ContactList/ContactList";
 import SearchBox from "../../components/SearchBox/SearchBox";
-import css from "./ContactsPage.module.css";
+import css from "./Contacts.module.css";
 import { useEffect } from "react";
-import { apiFetchContacts } from "../../redux/contacts/operations";
+import { fetchContacts } from "../../redux/contacts/operations";
 import { selectContactsIsLoading } from "../../redux/contacts/selectors";
 import { NavLink, Outlet } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -13,7 +13,7 @@ const ContactsPage = () => {
   const isLoading = useSelector(selectContactsIsLoading);
 
   useEffect(() => {
-    dispatch(apiFetchContacts());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   return (
