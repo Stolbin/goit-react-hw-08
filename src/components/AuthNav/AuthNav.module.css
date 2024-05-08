@@ -5,15 +5,14 @@
   font-size: 20px;
   font-weight: 700;
   color: #2a363b;
-  animation: showBtn 800ms ease-in-out forwards;
+  animation: showAnimation 600ms ease-in-out forwards;
   &:hover {
     color: #15066d;
   }
 }
 
-@keyframes showBtn {
+@keyframes showAnimation {
   0% {
-    top: -200px;
     opacity: 0;
   }
 
@@ -21,6 +20,7 @@
     transform: translateX(0);
   }
 }
+
 .btnRegister,
 .btnLogIn {
   width: 60px;
@@ -42,15 +42,13 @@
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   border-radius: 5px;
   transition: background-color 0.4s ease;
-}
-
-.btnRegister:hover,
-.btnLogIn:hover {
-  background: linear-gradient(
-    to top,
-    rgb(70, 128, 186) 90%,
-    rgba(79, 133, 187, 1) 66%
-  );
+  &:hover {
+    background: linear-gradient(
+      to top,
+      rgb(70, 128, 186) 90%,
+      rgba(79, 133, 187, 1) 66%
+    );
+  }
 }
 
 @media screen and (min-width: 768px) {

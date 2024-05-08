@@ -4,8 +4,23 @@
   padding: 12px;
   font-size: 20px;
   font-weight: 700;
+  animation: showAnimation 800ms ease-in-out forwards;
   color: #2a363b;
+  scale: 1;
+  transition: scale 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
   &:hover {
-    color: #15066d;
+    color: hsl(131, 93%, 17%);
+    scale: 1.05;
+    transition: scale 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+}
+
+@keyframes showAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
