@@ -1,7 +1,62 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    border-bottom: 1px solid #2a363b;
+.container {
+  max-width: 375px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+}
+
+.headerContainer {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  height: 60px;
+}
+
+.headerBox {
+  background-image: radial-gradient(
+    circle at 50% 30.16%,
+    #ffea77 0,
+    #ffd25c 25%,
+    #f2b53c 50%,
+    #e29818 75%,
+    #d78000 100%
+  );
+  border-bottom: 1px solid #0a4861;
+  box-shadow: 0px 3px 2px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
   }
+
+  .headerContainer {
+    padding: 10px;
+    margin: 0 2%;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .headerContainer {
+    padding: 10px;
+  }
+
+  .header {
+    margin-bottom: 60px;
+    display: flex;
+  }
+}

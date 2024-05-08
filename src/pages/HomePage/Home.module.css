@@ -1,16 +1,17 @@
 .text {
-  /* display: flex; */
   align-items: center;
   text-align: center;
-  color: #70bfcc;
-  font-size: 22px;
+  color: #101415;
+  font-size: 20px;
   line-height: 1.11;
   letter-spacing: 0.02em;
+  margin-top: 1%;
 }
 
 @media screen and (min-width: 768px) {
   .text {
-    font-size: 44px;
+    font-size: 40px;
+    margin-top: 5%;
   }
 }
 

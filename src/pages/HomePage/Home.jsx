@@ -7,8 +7,8 @@ const HomePage = () => {
       <Helmet>
         <title>Home Page</title>
       </Helmet>
-      <div className={css.container}>
-        <h1 className={css.text}>Welcome to your contacts manager! </h1>
+      <div>
+        <h1 className={css.text}>It is your personal phone book</h1>
       </div>
     </>
   );
