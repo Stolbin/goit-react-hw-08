@@ -13,7 +13,7 @@ const UserMenu = () => {
 
   return (
     <div className={css.container}>
-      <p className={css.userName}> {userData.name}</p>
+      <p className={css.userName}>👤 {userData.name}</p>
       <button className={css.btnLogout} onClick={onLogout} type="button">
         Logout
       </button>
