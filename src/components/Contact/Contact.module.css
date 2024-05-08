@@ -27,11 +27,25 @@
   }
 }
 
+.contactLetter {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  text-align: center;
+  align-items: center;
+}
+
 .contactTitle {
   text-transform: uppercase;
   text-shadow: 0 0 0 transparent;
   filter: none;
 }
+
 .contactBtn {
   background-color: orangered;
   border: 1px solid orangered;
@@ -49,10 +63,12 @@
   background-color: #e0ffff;
   transition: background-color 350ms linear, color 200ms linear;
 }
+
 .contactText {
   width: 100%;
   text-align: center;
 }
+
 .spanontactText {
   font-weight: 600;
   margin-right: 5%;

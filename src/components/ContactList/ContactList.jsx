@@ -23,24 +23,32 @@ const ContactList = () => {
   const foundContactsCount = filteredContacts.length;
 
   return (
-    <div className={css.container}>
-      {isLoading && <Loader />}
-      {isError && <ErrorMessage />}
-      {noContacts && <p className={css.textFound}>No contacts found.</p>}
-      {nameFilter && foundContactsCount > 0 && (
-        <p>Found {foundContactsCount} contacts.</p>
-      )}
+    <div className={css.textTotalBox}>
       {foundContactsCount === 0 && !nameFilter && (
         <p className={css.textNotContact}>
           You have no contacts yet. Add your first contact!
         </p>
       )}
-      {!nameFilter && <p>Total contacts: {totalContacts}</p>}
-      <ul className={css.contactList}>
-        {filteredContacts.map(({ name, number, id }) => (
-          <Contact key={id} id={id} name={name} number={number} />
-        ))}
-      </ul>
+      {!nameFilter && (
+        <p className={css.textNotContactTotal}>
+          Total contacts: {totalContacts}
+        </p>
+      )}
+      <div className={css.container}>
+        {isLoading && <Loader />}
+        {isError && <ErrorMessage />}
+        {noContacts && <p className={css.textFound}>No contacts found.</p>}
+        {nameFilter && foundContactsCount > 0 && (
+          <p>Found {foundContactsCount} contacts.</p>
+        )}
+        <div className={css.contactListBox}>
+          <ul className={css.contactList}>
+            {filteredContacts.map((contact) => (
+              <Contact key={contact.id} contact={contact} />
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

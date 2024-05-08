@@ -47,6 +47,7 @@ const ContactForm = () => {
       initialValues={FormInitialValues}
       validationSchema={contactFormSchema}
       onSubmit={handleSubmit}
+      className={css.form}
     >
       <Form className={css.form}>
         <label htmlFor={nameFieldId} className={css.formLabel}>

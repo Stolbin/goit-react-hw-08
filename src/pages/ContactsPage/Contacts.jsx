@@ -17,7 +17,7 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <div className={css.container}>
+    <div className={css.containerContactsPage}>
       <Helmet>
         <title>Contacts Page</title>
       </Helmet>

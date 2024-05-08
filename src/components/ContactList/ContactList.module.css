@@ -1,3 +1,15 @@
+.textTotalBox {
+  text-align: center;
+  width: 320px;
+  margin-top: 10px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 10px;
+}
 .contactListBox {
   padding: 1%;
   max-width: 80vw;
@@ -21,4 +33,19 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+}
+.textFound,
+.textNotContactTotal {
+  font-size: 12px;
+  color: red;
+}
+.textNotContact {
+  font-size: 12px;
+  color: red;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
 }
