@@ -5,8 +5,20 @@
   font-size: 20px;
   font-weight: 700;
   color: #2a363b;
+  animation: showBtn 800ms ease-in-out forwards;
   &:hover {
     color: #15066d;
+  }
+}
+
+@keyframes showBtn {
+  0% {
+    top: -200px;
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
 .btnRegister,
