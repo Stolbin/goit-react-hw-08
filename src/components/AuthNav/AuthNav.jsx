@@ -5,10 +5,14 @@ const AuthNav = () => {
   return (
     <div>
       <NavLink className={css.link} to="/register">
-        Register
+        <button className={css.btnRegister} type="button">
+          Register
+        </button>
       </NavLink>
       <NavLink className={css.link} to="/login">
-        Log In
+        <button className={css.btnLogIn} type="button">
+          Log In
+        </button>
       </NavLink>
     </div>
   );

@@ -9,3 +9,45 @@
     color: #15066d;
   }
 }
+.btnRegister,
+.btnLogIn {
+  width: 60px;
+  height: 30px;
+  font-size: 14px;
+  line-height: 1.11;
+  letter-spacing: 0.04em;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 5px;
+  background: linear-gradient(
+    to bottom,
+    rgba(79, 133, 187, 1) 47%,
+    rgb(70, 125, 180) 90%
+  );
+  border-bottom: 1px solid #0a4861;
+  box-shadow: 0px 3px 2px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  border-radius: 5px;
+  transition: background-color 0.4s ease;
+}
+
+.btnRegister:hover,
+.btnLogIn:hover {
+  background: linear-gradient(
+    to top,
+    rgb(70, 128, 186) 90%,
+    rgba(79, 133, 187, 1) 66%
+  );
+}
+
+@media screen and (min-width: 768px) {
+  .btnRegister,
+  .btnLogIn {
+    width: 90px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 1.11;
+    letter-spacing: 0.04em;
+  }
+}
