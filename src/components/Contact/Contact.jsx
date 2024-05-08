@@ -10,7 +10,6 @@ const Contact = ({ contact }) => {
   const firstLetter = name.charAt(0).toUpperCase();
   return (
     <li className={css.contactItem}>
-      {" "}
       <div
         className={css.contactLetter}
         style={{ backgroundColor: getRandomColor() }}

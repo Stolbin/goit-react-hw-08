@@ -5,14 +5,16 @@ import { Suspense, lazy, useEffect } from "react";
 import { refreshUser } from "../../redux/auth/operations";
 import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
-import NotFoundPage from "../../pages/NotFoundPage/NotFound";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import ContactForm from "../ContactForm/ContactForm";
 
-const HomePage = lazy(() => import("../../pages/HomePage/Home"));
-const ContactsPage = lazy(() => import("../../pages/ContactsPage/Contacts"));
-const LoginPage = lazy(() => import("../../pages/LoginPage/Login"));
+const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
+const ContactsPage = lazy(() =>
+  import("../../pages/ContactsPage/ContactsPage")
+);
+const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage"));
 const RegistrationPage = lazy(() =>
-  import("../../pages/RegistrationPage/Registration")
+  import("../../pages/RegistrationPage/RegistrationPage")
 );
 const App = () => {
   const dispatch = useDispatch();
