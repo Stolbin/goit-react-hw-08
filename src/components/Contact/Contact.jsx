@@ -10,13 +10,15 @@ const Contact = ({ contact }) => {
   const firstLetter = name.charAt(0).toUpperCase();
   return (
     <li className={css.contactItem}>
-      <div
-        className={css.contactLetter}
-        style={{ backgroundColor: getRandomColor() }}
-      >
-        {firstLetter}
+      <div className={css.contactTitleBox}>
+        <div
+          className={css.contactLetter}
+          style={{ backgroundColor: getRandomColor() }}
+        >
+          {firstLetter}
+        </div>
+        <h4 className={css.contactTitle}>{name}</h4>
       </div>
-      <h4 className={css.contactTitle}>{name}</h4>
       <p className={css.contactText}>
         <span className={css.spanontactText}>☎️</span>
         {number}

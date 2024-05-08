@@ -1,7 +1,14 @@
 .textTotalBox {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
   width: 320px;
   margin-top: 10px;
+  /* margin-right: auto;
+  margin-left: auto; */
 }
 .container {
   display: flex;
@@ -21,6 +28,7 @@
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 .listTitle {
   text-align: center;

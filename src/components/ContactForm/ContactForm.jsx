@@ -4,6 +4,7 @@ import {
   maxLengthDataValidation,
 } from "../utils/constants";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 import * as Yup from "yup";
 import "react-toastify/ReactToastify.css";
@@ -28,6 +29,8 @@ const FormInitialValues = {
 
 const ContactForm = () => {
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
   const nameFieldId = nanoid();
   const numberFieldId = nanoid();
 
@@ -40,6 +43,7 @@ const ContactForm = () => {
     const action = addContact(newContact);
     dispatch(action);
     actions.resetForm();
+    navigate("/contacts");
   };
 
   return (
