@@ -11,18 +11,20 @@ const Contact = ({ contact }) => {
   return (
     <li className={css.contactItem}>
       <div className={css.contactTitleBox}>
-        <div
-          className={css.contactLetter}
-          style={{ backgroundColor: getRandomColor() }}
-        >
-          {firstLetter}
+        <div className={css.contactItemName}>
+          <div
+            className={css.contactLetter}
+            style={{ backgroundColor: getRandomColor() }}
+          >
+            {firstLetter}
+          </div>
+          <h4 className={css.contactTitle}>{name}</h4>
         </div>
-        <h4 className={css.contactTitle}>{name}</h4>
+        <div className={css.contactTextBox}>
+          <span className={css.spanontactText}>☎️</span>
+          <p className={css.contactTextNumber}>{number}</p>
+        </div>
       </div>
-      <p className={css.contactText}>
-        <span className={css.spanontactText}>☎️</span>
-        {number}
-      </p>
       <button
         className={css.contactBtn}
         type="button"

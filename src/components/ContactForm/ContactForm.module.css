@@ -18,8 +18,17 @@
   margin: 0 auto;
   color: #2a363b;
   gap: 10px;
+  animation: showAnimation 400ms ease-in-out forwards;
 }
+@keyframes showAnimation {
+  0% {
+    opacity: 0;
+  }
 
+  100% {
+    transform: translateX(0);
+  }
+}
 .titleForm {
   font-size: 22px;
   text-align: center;

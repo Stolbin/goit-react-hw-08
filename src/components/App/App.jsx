@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "../Layout/Layout";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Suspense, lazy, useEffect } from "react";
 import { refreshUser } from "../../redux/auth/operations";
+import { selectIsRefreshing } from "../../redux/auth/selectors";
 import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
@@ -18,11 +19,11 @@ const RegistrationPage = lazy(() =>
 );
 const App = () => {
   const dispatch = useDispatch();
-
+  const isRefreshing = useSelector(selectIsRefreshing);
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
-
+  if (isRefreshing) return <div className="css.loading">...loading</div>;
   return (
     <Layout>
       <Suspense fallback={null}>
@@ -52,7 +53,15 @@ const App = () => {
               <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
             }
           />
-          <Route path="addNewContact" element={<ContactForm />} />
+          <Route
+            path="addNewContact"
+            element={
+              <PrivateRoute
+                redirectTo="/contacts"
+                component={<ContactForm />}
+              />
+            }
+          />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

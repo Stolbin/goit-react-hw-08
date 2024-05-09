@@ -3,9 +3,19 @@
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  animation: showAnimation 400ms ease-in-out forwards;
   width: 320px;
 }
 
+@keyframes showAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
 .btnLink {
   width: 320px;
   height: 35px;

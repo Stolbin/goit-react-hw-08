@@ -1,7 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import {
-  minLengthDataValidation,
-  maxLengthDataValidation,
+  minLengthDataNameValidation,
+  maxLengthDataNameValidation,
+  minLengthDataNumberValidation,
+  maxLengthDataNumberValidation,
 } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -14,12 +16,12 @@ import { addContact } from "../../redux/contacts/operations";
 const contactFormSchema = Yup.object().shape({
   name: Yup.string()
     .required("Required")
-    .min(minLengthDataValidation, "Too Short!")
-    .max(maxLengthDataValidation, "Too Long!"),
+    .min(minLengthDataNameValidation, "Too Short!")
+    .max(maxLengthDataNameValidation, "Too Long!"),
   number: Yup.string()
     .required("Required")
-    .min(minLengthDataValidation, "Too Short!")
-    .max(maxLengthDataValidation, "Too Long!"),
+    .min(minLengthDataNumberValidation, "Too Short!")
+    .max(maxLengthDataNumberValidation, "Too Long!"),
 });
 
 const FormInitialValues = {
