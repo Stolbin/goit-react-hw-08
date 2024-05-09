@@ -8,6 +8,8 @@ import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import ContactForm from "../ContactForm/ContactForm";
+import Loader from "../Loader/Loader";
+import { selectContactsIsLoading } from "../../redux/contacts/selectors";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const ContactsPage = lazy(() =>
@@ -17,13 +19,16 @@ const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage"));
 const RegistrationPage = lazy(() =>
   import("../../pages/RegistrationPage/RegistrationPage")
 );
+
 const App = () => {
+  const isLoading = useSelector(selectContactsIsLoading);
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
-  if (isRefreshing) return <div className="css.loading">...loading</div>;
+  if (isRefreshing)
+    return <div className="css.loading">{isLoading && <Loader />}</div>;
   return (
     <Layout>
       <Suspense fallback={null}>
