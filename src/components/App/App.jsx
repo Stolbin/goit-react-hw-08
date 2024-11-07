@@ -24,14 +24,21 @@ const App = () => {
   const isLoading = useSelector(selectContactsIsLoading);
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
+
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
+
   if (isRefreshing)
-    return <div className="css.loading">{isLoading && <Loader />}</div>;
+    return (
+      <div className="loader">
+        <Loader />
+      </div>
+    );
+
   return (
     <Layout>
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route
@@ -39,32 +46,26 @@ const App = () => {
             element={
               <RestrictedRoute
                 redirectTo="/contacts"
-                component={<RegistrationPage />}
+                component={RegistrationPage}
               />
             }
           />
           <Route
             path="/login"
             element={
-              <RestrictedRoute
-                redirectTo="/contacts"
-                component={<LoginPage />}
-              />
+              <RestrictedRoute redirectTo="/contacts" component={LoginPage} />
             }
           />
           <Route
             path="/contacts"
             element={
-              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+              <PrivateRoute redirectTo="/login" component={ContactsPage} />
             }
           />
           <Route
             path="addNewContact"
             element={
-              <PrivateRoute
-                redirectTo="/contacts"
-                component={<ContactForm />}
-              />
+              <PrivateRoute redirectTo="/contacts" component={ContactForm} />
             }
           />
           <Route path="*" element={<NotFoundPage />} />
